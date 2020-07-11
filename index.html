@@ -11,7 +11,8 @@
 <body>
    <div id="app">
       <div class="pre">
-         <div class="animate__animated animate__bounceInUp">Beat the Speed</div>
+         <div v-if="pre1" class="animate__animated animate__bounceInUp animate__delay-1s">Beat the Speed</div>
+         <div v-if="pre2" class="animate__animated animate__bounceOutDown animate__delay-1s">Beat the Speed</div>
       </div>
    </div>
    
