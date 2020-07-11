@@ -12,11 +12,11 @@
 body {
   width: 100%;
   height: 100%;
+  background-color: #0A192F;
 }
 
 #app {
   height: 100vh;
-  background-color: #0A192F;
 }
 
 #app .pre {
@@ -26,5 +26,42 @@ body {
   place-items: center;
   font-size: 40px;
   font-weight: 800;
+}
+
+#app .home {
+  height: 100vh;
+}
+
+#app .home .container {
+  padding: 20px;
+  text-align: center;
+}
+
+#app .home .container .brand {
+  margin-top: 25vh;
+  font-size: 40px;
+}
+
+#app .home .container .btns {
+  margin-top: 150px;
+}
+
+#app .home .container .btns .start {
+  text-align: center;
+}
+
+#app .home .container .btns .start img {
+  border-radius: 50%;
+}
+
+#app .home .container .btns .modes {
+  border: 2px solid pink;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 30px auto;
+  padding: 15px 20px;
+  font-size: 20px;
+  border-radius: 3px;
 }
 /*# sourceMappingURL=index.css.map */

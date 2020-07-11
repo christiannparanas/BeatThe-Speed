@@ -10,9 +10,20 @@
 </head>
 <body>
    <div id="app">
-      <div class="pre">
+      <div v-if="pre" class="pre">
          <div v-if="pre1" class="animate__animated animate__bounceInUp animate__delay-1s">Beat the Speed</div>
          <div v-if="pre2" class="animate__animated animate__bounceOutDown animate__delay-1s">Beat the Speed</div>
+      </div>
+      <div v-if="home" class="home">
+         <div class="container">
+            <div class="brand">Beat the Speed</div>
+            <div class="btns">
+               <div class="start">
+                  <img src="./assets/img/arrow.png" alt="">
+               </div>
+               <div class="modes">Modes</div>
+            </div>
+         </div>
       </div>
    </div>
    
