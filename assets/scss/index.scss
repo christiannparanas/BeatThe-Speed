@@ -30,6 +30,7 @@ body {
 
    .home {
       height: 100vh;
+      position: relative;
 
       .container {
          padding: 20px;
@@ -53,12 +54,53 @@ body {
             }
 
             .modes {
-               border: 2px solid pink;
-               width: fit-content;
-               margin: 30px auto;
-               padding: 15px 20px;
-               font-size: 20px;
-               border-radius: 3px;
+
+               button {
+                  margin-top: 20px;
+                  z-index: 1;
+                  position: relative;
+                  font-size: inherit;
+                  font-family: inherit;
+                  color: white;
+                  padding: 15px 20px;
+                  outline: none;
+                  border: none;
+                  background-color: hsl(236, 32%, 26%);
+                  overflow: hidden;
+                  transition: color 0.4s ease-in-out;
+               }
+
+               button::before {
+                  content: '';
+                  z-index: -1;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  width: 1em;
+                  height: 1em;
+                  border-radius: 50%;
+                  background-color: #3cefff;
+                  transform-origin: center;
+                  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+                  transition: transform 0.45s ease-in-out;
+               }
+                
+               button:hover {
+                  cursor: pointer;
+                  color: #161616;
+               }
+                
+               button:hover::before {
+                  transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+               }
+            }
+
+            .built {
+               position: absolute;
+               bottom: 15px;
+               left: 50%;
+               margin-left: -80px;
+               font-size: 12px;
             }
          }
       }

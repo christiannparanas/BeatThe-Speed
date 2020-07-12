@@ -1,10 +1,10 @@
 new Vue({
    el: '#app',
    data: {
-      pre: true,
-      pre1: true,
+      pre: false,
+      pre1: false,
       pre2: false,
-      home: false
+      home: true
    },
    methods: {
       preload: function() {

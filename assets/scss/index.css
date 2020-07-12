@@ -30,6 +30,7 @@ body {
 
 #app .home {
   height: 100vh;
+  position: relative;
 }
 
 #app .home .container {
@@ -54,14 +55,57 @@ body {
   border-radius: 50%;
 }
 
-#app .home .container .btns .modes {
-  border: 2px solid pink;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 30px auto;
+#app .home .container .btns .modes button {
+  margin-top: 20px;
+  z-index: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  color: white;
   padding: 15px 20px;
-  font-size: 20px;
-  border-radius: 3px;
+  outline: none;
+  border: none;
+  background-color: #2d3058;
+  overflow: hidden;
+  -webkit-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+
+#app .home .container .btns .modes button::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: #3cefff;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+          transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.45s ease-in-out;
+  transition: -webkit-transform 0.45s ease-in-out;
+  transition: transform 0.45s ease-in-out;
+  transition: transform 0.45s ease-in-out, -webkit-transform 0.45s ease-in-out;
+}
+
+#app .home .container .btns .modes button:hover {
+  cursor: pointer;
+  color: #161616;
+}
+
+#app .home .container .btns .modes button:hover::before {
+  -webkit-transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+          transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+}
+
+#app .home .container .btns .built {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  margin-left: -80px;
+  font-size: 12px;
 }
 /*# sourceMappingURL=index.css.map */
