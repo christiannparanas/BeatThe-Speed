@@ -21,10 +21,10 @@
                <h3>Select mode</h3>
                <div class="closebtn"><i @click="closemModal" class="fa fa-close"></i></div>
                <div class="categ">
-                  <div @click="selectCat(1)" class="add">Addition <i v-if="clickCat.add" class='fas fa-check-circle'></i></div>
-                  <div @click="selectCat(2)" class="sub">Subtract <i v-if="clickCat.sub" class='fas fa-check-circle'></i></div>
-                  <div @click="selectCat(3)" class="mul">Multiplication <i v-if="clickCat.mul" class='fas fa-check-circle'></i></div>
-                  <div @click="selectCat(4)" class="div">Division <i v-if="clickCat.div" class='fas fa-check-circle'></i></div>
+                  <div @click="selectCat(1)" :style="selmodBg(1)" class="add">Addition <i v-if="clickCat.add" class='fas fa-check-circle'></i></div>
+                  <div @click="selectCat(2)" :style="selmodBg(2)" class="sub">Subtract <i v-if="clickCat.sub" class='fas fa-check-circle'></i></div>
+                  <div @click="selectCat(3)" :style="selmodBg(3)" class="mul">Multiplication <i v-if="clickCat.mul" class='fas fa-check-circle'></i></div>
+                  <div @click="selectCat(4)" :style="selmodBg(4)" class="div">Division <i v-if="clickCat.div" class='fas fa-check-circle'></i></div>
                </div>
             </div>
             <div class="brand">Beat the Speed</div>

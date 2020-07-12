@@ -1,16 +1,17 @@
 new Vue({
    el: '#app',
    data: {
-      pre: false,
-      pre1: false,
+      pre: true,
+      pre1: true,
       pre2: false,
-      home: true,
+      home: false,
       modeModal: false,
       clickCat: {
          add: false,
          sub: false,
          mul: false,
          div: false,
+         selectbgcolor: '#0A192F'
       }
    },
    methods: {
@@ -33,6 +34,20 @@ new Vue({
       },
       closemModal: function() {
          this.modeModal = false
+      },
+      selmodBg: function(num) {
+         let bg;
+         if(this.clickCat.add === true && num === 1) {
+            bg = { backgroundColor: this.clickCat.selectbgcolor }
+         }else if(this.clickCat.sub === true && num === 2) {
+            bg = { backgroundColor: this.clickCat.selectbgcolor }
+         }else if(this.clickCat.mul === true && num === 3) {
+            bg = { backgroundColor: this.clickCat.selectbgcolor }
+         }else if(this.clickCat.div === true && num === 4) {
+            bg = { backgroundColor: this.clickCat.selectbgcolor }
+         }
+
+         return bg;
       },
       selectCat: function(num) {
          if(num === 1) {
