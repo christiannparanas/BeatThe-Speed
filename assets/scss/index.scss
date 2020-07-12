@@ -8,7 +8,6 @@
    box-sizing: border-box;
    font-family: 'Montserrat', sans-serif;
    color: #CCD6F6;
-   overflow: hidden;
 }
 
 body {
@@ -42,7 +41,8 @@ body {
          }
 
          .btns {
-            margin-top: 150px;
+            margin: 150px 0 30px 0;
+            position: relative;
 
             .start {
                text-align: center;
@@ -97,10 +97,11 @@ body {
 
             .built {
                position: absolute;
-               bottom: 15px;
+               bottom: -205px;
                left: 50%;
                margin-left: -80px;
                font-size: 12px;
+               margin-bottom: 20px;
             }
          }
       }
