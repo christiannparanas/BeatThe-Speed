@@ -166,23 +166,23 @@ body {
       height: 100vh;
       color: #fff;
 
-      .timer {
-         transition: all 5s ease;
-         position: fixed;
-         width: 100%;
-         padding: 3px 0;
-         background-color: #fff;
-      }
-
       .container {
          padding: 20px;
          height: 100vh;
          position: relative;
          text-align: center;
 
+         .timer {
+            color: #fff;
+            font-size: 20px;
+            position: absolute;
+            top: 40px;
+            left: 20px;
+         }
+
          .points {
             color: #fff;
-            font-size: 40px;
+            font-size: 20px;
             position: absolute;
             top: 40px;
             right: 20px;

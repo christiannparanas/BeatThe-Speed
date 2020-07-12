@@ -23,6 +23,7 @@ new Vue({
       timerCount: 5,
       num1: 0,
       num2: 0,
+      points: 0,
       rightAns: 0,
       randomAns: 0
    },
@@ -85,15 +86,17 @@ new Vue({
          this.changeBgColor()
 
          // prob
-         this.num1 = Math.floor(Math.random() * 50)
-         this.num2 = Math.floor(Math.random() * 50)
-         this.randomAns = Math.floor(Math.random() * 50)
+         this.num1 = Math.floor(Math.random() * 20)
+         this.num2 = Math.floor(Math.random() * 20)
+         this.randomAns = Math.floor(Math.random() * 40)
 
          // right ans
          this.rightAns = this.num1 + this.num2
       },
       correct: function() {
+
          if(this.rightAns === this.randomAns) {
+            this.points += 1
             this.nextProb()
          } else {
             clearInterval(setIn)
@@ -103,6 +106,7 @@ new Vue({
       },
       wrong: function() {
          if(this.rightAns != this.randomAns) {
+            this.points += 1
             this.nextProb()
          } else {
             clearInterval(setIn)
@@ -117,9 +121,9 @@ new Vue({
          this.changeBgColor()
 
          // prob
-         this.num1 = Math.floor(Math.random() * 100)
-         this.num2 = Math.floor(Math.random() * 100)
-         this.randomAns = Math.floor(Math.random() * 100)
+         this.num1 = Math.floor(Math.random() * 20)
+         this.num2 = Math.floor(Math.random() * 20)
+         this.randomAns = Math.floor(Math.random() * 40)
 
          // right ans
          this.rightAns = this.num1 + this.num2

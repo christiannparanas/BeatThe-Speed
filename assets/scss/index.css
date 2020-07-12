@@ -173,15 +173,6 @@ body {
   color: #fff;
 }
 
-#app .game .timer {
-  -webkit-transition: all 5s ease;
-  transition: all 5s ease;
-  position: fixed;
-  width: 100%;
-  padding: 3px 0;
-  background-color: #fff;
-}
-
 #app .game .container {
   padding: 20px;
   height: 100vh;
@@ -189,9 +180,17 @@ body {
   text-align: center;
 }
 
+#app .game .container .timer {
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+}
+
 #app .game .container .points {
   color: #fff;
-  font-size: 40px;
+  font-size: 20px;
   position: absolute;
   top: 40px;
   right: 20px;
