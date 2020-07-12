@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./assets/scss/index.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <script src="./assets/scripts/vue.js"></script>
    <title>Beat the Speed</title>
 </head>
@@ -16,13 +17,23 @@
       </div>
       <div v-if="home" class="home">
          <div class="container">
+            <div v-if="modeModal" class="mode-modal">
+               <h3>Select mode</h3>
+               <div class="closebtn"><i @click="closemModal" class="fa fa-close"></i></div>
+               <div class="categ">
+                  <div class="add">Addition</div>
+                  <div class="sub">Subtract</div>
+                  <div class="mul">Multiplication</div>
+                  <div class="div">Division</div>
+               </div>
+            </div>
             <div class="brand">Beat the Speed</div>
             <div class="btns">
                <div class="start">
                   <img src="./assets/img/arrow.png" alt="">
                </div>
                <div class="modes">
-                  <button>Modes</button>
+                  <button @click="mModal" >Modes</button>
                </div>
                <div class="built">
                   built by christianparanas

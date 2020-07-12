@@ -34,6 +34,48 @@ body {
       .container {
          padding: 20px;
          text-align: center;
+         position: relative;
+
+         .mode-modal {
+            z-index: 2;
+            position: absolute;
+            top: 200px;
+            border-radius: 4px;
+            background-color: #172A45;
+            width: 90%;
+            padding: 20px;
+
+            .closebtn {
+               font-size: 20px;
+               position: absolute;
+               top: 20px;
+               right: 20px;
+
+               i {
+                  transition: color .3s ease;
+               }
+
+               i:hover {
+                  color: #3cefff;
+               }
+            }
+
+            .categ {
+               margin-top: 40px;
+               display: grid;
+               grid-template-columns: 1fr 1fr;
+               grid-row-gap: 10px;
+               grid-column-gap: 10px;
+            }
+
+            .categ > div {
+               border: 2px solid pink;
+               padding: 50px 20px;
+               border-radius: 3px;
+               
+            }
+            
+         }
 
          .brand {
             margin-top: 25vh;
@@ -41,7 +83,7 @@ body {
          }
 
          .btns {
-            margin: 150px 0 30px 0;
+            margin: 130px 0 30px 0;
             position: relative;
 
             .start {
