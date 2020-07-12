@@ -180,6 +180,27 @@ body {
   text-align: center;
 }
 
+#app .game .container .overmodal {
+  z-index: 2;
+  position: absolute;
+  top: 170px;
+  border-radius: 4px;
+  background-color: #172A45;
+  width: 90%;
+  padding: 20px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+#app .game .container .overmodal .option {
+  margin-top: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
 #app .game .container .timer {
   color: #fff;
   font-size: 20px;

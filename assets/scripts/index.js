@@ -6,6 +6,7 @@ new Vue({
       pre2: false,
       home: false,
       modeModal: false,
+      overModal: false,
       clickCat: {
          add: false,
          sub: false,
@@ -26,6 +27,13 @@ new Vue({
       points: 0,
       rightAns: 0,
       randomAns: 0
+   },
+   watch: {
+      timerCount: function() {
+         if(this.timerCount === 0) {
+            this.nextProb()
+         }
+      }
    },
    methods: {
       preload: function() {
@@ -101,7 +109,7 @@ new Vue({
          } else {
             clearInterval(setIn)
             this.timerCount = 5
-            alert('game over')
+            this.gameover()
          }
       },
       wrong: function() {
@@ -111,7 +119,21 @@ new Vue({
          } else {
             clearInterval(setIn)
             this.timerCount = 5
-            alert('gameover')
+            this.gameover()
+         }
+      },
+      gameover: function() {
+         this.overModal = true
+      },
+      navi: function(num) {
+         if(num === 1) {
+            this.overModal = false
+            this.points = 0
+            this.start()
+         }else if(num === 2) {
+            this.home = true
+            this.overModal = false
+            this.gamestart = false
          }
       },
       nextProb: function() {

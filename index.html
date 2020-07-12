@@ -43,8 +43,17 @@
       </div>
       <div v-if="gamestart" :style="currentBg" class="game" >
          <div class="container">
+            <div v-if="overModal" class="overmodal">
+               <h1>Game Over!</h1>
+               <div class="mode">Mode: Addition</div>
+               <div class="score">Score: {{ points }}</div>
+               <div class="option">
+                  <div class="tryagain"><img @click="navi(1)" src="./assets/img/retry.png" alt=""></div>
+                  <div class=""><img @click="navi(2)" src="./assets/img/home.png" alt=""></div>
+               </div>
+            </div>
             <div class="timer">Time: {{ timerCount }}s</div>
-            <div class="points">Points: {{ points }}</div>
+            <div class="points">Score: {{ points }}</div>
             <div ref="prob" class="problem">{{ num1 }} + {{ num2 }} = {{ randomAns }}</div>
             <div class="btns">
                <div ref="corr" class="correct"><img @click="correct" src="./assets/img/check.png" alt=""></div>

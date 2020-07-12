@@ -172,6 +172,23 @@ body {
          position: relative;
          text-align: center;
 
+         .overmodal {
+            z-index: 2;
+            position: absolute; 
+            top: 170px;
+            border-radius: 4px;
+            background-color: #172A45;
+            width: 90%;
+            padding: 20px;
+            height: fit-content;
+
+            .option {
+               margin-top: 20px;
+               display: grid;
+               grid-template-columns: 1fr 1fr;
+            }
+         }
+
          .timer {
             color: #fff;
             font-size: 20px;
