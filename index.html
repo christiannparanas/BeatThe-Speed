@@ -30,7 +30,7 @@
             <div class="brand">Beat the Speed</div>
             <div class="btns">
                <div class="start">
-                  <img src="./assets/img/arrow.png" alt="">
+                  <img @click="start" src="./assets/img/arrow.png" alt="">
                </div>
                <div class="modes">
                   <button @click="mModal" >Modes</button>
@@ -38,6 +38,17 @@
                <div class="built">
                   built by christianparanas
                </div>
+            </div>
+         </div>
+      </div>
+      <div v-if="gamestart" :style="{backgroundColor: changeBgColor()}" class="game" >
+         <div class="timer">.</div>
+         <div class="container">
+            <div class="points">2</div>
+            <div class="problem">1 + 1 = 10</div>
+            <div class="btns">
+               <div class="correct"><img src="./assets/img/check.png" alt=""></div>
+               <div class="wrong"><img src="./assets/img/wrong.png" alt=""></div>
             </div>
          </div>
       </div>

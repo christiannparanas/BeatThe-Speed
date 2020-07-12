@@ -12,7 +12,10 @@ new Vue({
          mul: false,
          div: false,
          selectbgcolor: '#0A192F'
-      }
+      },
+      // game
+      bgColors: ['#d86a87', '#a604a7', '#5cbc7d', '#128e84', '#4aa7d2', '#039688', '#8874A3'],
+      gamestart:  false
    },
    methods: {
       preload: function() {
@@ -63,6 +66,17 @@ new Vue({
             this.clickCat.div = true
             this.clickCat.add = this.clickCat.sub = this.clickCat.mul = false
          }
+      },
+      // start
+      start: function() {
+         this.pre = false
+         this.home = false
+         this.gamestart = true  
+      },
+      changeBgColor: function() {
+         let index = Math.floor(Math.random() * 9)
+         
+         return this.bgColors[index]
       }
    },
    // call the preload function on page load 
