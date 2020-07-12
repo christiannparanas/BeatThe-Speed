@@ -69,10 +69,22 @@ body {
             }
 
             .categ > div {
-               border: 2px solid pink;
+               position: relative;
+               border: 3px solid #0A192F;
                padding: 50px 20px;
                border-radius: 3px;
-               
+               transition: all .4s ease-in-out;
+
+               i {
+                  color: #3cefff;
+                  position: absolute;
+                  top: 10px;
+                  right: 10px;
+               }
+            }
+
+            .categ > div:hover {
+               background-color: #0A192F;
             }
             
          }
