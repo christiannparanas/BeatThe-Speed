@@ -167,6 +167,7 @@ body {
       color: #fff;
 
       .timer {
+         transition: all 5s ease;
          position: fixed;
          width: 100%;
          padding: 3px 0;
@@ -190,9 +191,8 @@ body {
          .problem {
             margin-top: 200px;
             color: #fff;
-            font-size: 60px;
+            font-size: 50px;
             font-weight: 800;
-            
          }
 
          .btns {

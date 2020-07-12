@@ -13,9 +13,18 @@ new Vue({
          div: false,
          selectbgcolor: '#0A192F'
       },
+      setIn: null,
       // game
       bgColors: ['#d86a87', '#a604a7', '#5cbc7d', '#128e84', '#4aa7d2', '#039688', '#8874A3'],
-      gamestart:  false
+      gamestart:  false,
+      currentBg: {
+         backgroundColor: ''
+      },
+      timerCount: 5,
+      num1: 0,
+      num2: 0,
+      rightAns: 0,
+      randomAns: 0
    },
    methods: {
       preload: function() {
@@ -72,11 +81,66 @@ new Vue({
          this.pre = false
          this.home = false
          this.gamestart = true  
+         this.timerStart()
+         this.changeBgColor()
+
+         // prob
+         this.num1 = Math.floor(Math.random() * 50)
+         this.num2 = Math.floor(Math.random() * 50)
+         this.randomAns = Math.floor(Math.random() * 50)
+
+         // right ans
+         this.rightAns = this.num1 + this.num2
+      },
+      correct: function() {
+         if(this.rightAns === this.randomAns) {
+            this.nextProb()
+         } else {
+            clearInterval(setIn)
+            this.timerCount = 5
+            alert('game over')
+         }
+      },
+      wrong: function() {
+         if(this.rightAns != this.randomAns) {
+            this.nextProb()
+         } else {
+            clearInterval(setIn)
+            this.timerCount = 5
+            alert('gameover')
+         }
+      },
+      nextProb: function() {
+         clearInterval(setIn)
+         this.timerCount = 5
+         this.timerStart()
+         this.changeBgColor()
+
+         // prob
+         this.num1 = Math.floor(Math.random() * 100)
+         this.num2 = Math.floor(Math.random() * 100)
+         this.randomAns = Math.floor(Math.random() * 100)
+
+         // right ans
+         this.rightAns = this.num1 + this.num2
+         if(this.rightAns === this.randomAns) {
+            this.nextProb()
+         }
       },
       changeBgColor: function() {
          let index = Math.floor(Math.random() * 9)
          
-         return this.bgColors[index]
+         // return this.bgColors[index]
+         this.currentBg.backgroundColor = this.bgColors[index]
+      },
+      timerStart: function() {
+         setIn = setInterval(() => {
+            this.timerCount -= 1;
+            if(this.timerCount === 0) {
+               clearInterval(setIn)
+            }
+         }, 1000)
+
       }
    },
    // call the preload function on page load 

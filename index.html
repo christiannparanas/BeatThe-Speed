@@ -41,14 +41,13 @@
             </div>
          </div>
       </div>
-      <div v-if="gamestart" :style="{backgroundColor: changeBgColor()}" class="game" >
-         <div class="timer">.</div>
+      <div v-if="gamestart" :style="currentBg" class="game" >
          <div class="container">
-            <div class="points">2</div>
-            <div class="problem">1 + 1 = 10</div>
+            <div class="points">{{ timerCount }}</div>
+            <div ref="prob" class="problem">{{ num1 }} + {{ num2 }} = {{ randomAns }}</div>
             <div class="btns">
-               <div class="correct"><img src="./assets/img/check.png" alt=""></div>
-               <div class="wrong"><img src="./assets/img/wrong.png" alt=""></div>
+               <div class="correct"><img @click="correct" src="./assets/img/check.png" alt=""></div>
+               <div class="wrong"><img @click="wrong" src="./assets/img/wrong.png" alt=""></div>
             </div>
          </div>
       </div>
