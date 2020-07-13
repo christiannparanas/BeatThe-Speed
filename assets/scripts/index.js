@@ -27,7 +27,8 @@ new Vue({
       points: 0,
       rightAns: 0,
       randomAns: 0,
-      btnDisabled: "all"
+      btnDisabled: "all",
+      categNum: null
    },
    watch: {
       timerCount: function() {
@@ -72,16 +73,25 @@ new Vue({
          return bg;
       },
       selectCat: function(num) {
+         this.categNum = num
          if(num === 1) {
+            this.op = "+"
+            this.rightAns = this.num1 + this.num2
             this.clickCat.add = true
             this.clickCat.sub = this.clickCat.mul = this.clickCat.div = false
          }else if(num === 2) {
+            this.op = "-"
+            this.rightAns = this.num1 - this.num2
             this.clickCat.sub = true 
             this.clickCat.add = this.clickCat.mul = this.clickCat.div = false
          }else if(num === 3) {
+            this.op = "*"
+            this.rightAns = this.num1 * this.num2
             this.clickCat.mul = true
             this.clickCat.add = this.clickCat.sub = this.clickCat.div = false
          }else if(num === 4) {
+            this.op = "/"
+            this.rightAns = this.num1 / this.num2
             this.clickCat.div = true
             this.clickCat.add = this.clickCat.sub = this.clickCat.mul = false
          }
@@ -101,7 +111,7 @@ new Vue({
          this.randomAns = Math.floor(Math.random() * 40)
 
          // right ans
-         this.rightAns = this.num1 + this.num2
+         this.selectCat(this.categNum)
       },
       correct: function() {
 

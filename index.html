@@ -54,7 +54,7 @@
             </div>
             <div class="timer">Time: {{ timerCount }}s</div>
             <div class="points">Score: {{ points }}</div>
-            <div ref="prob" class="problem">{{ num1 }} + {{ num2 }} = {{ randomAns }}</div>
+            <div ref="prob" class="problem">{{ num1 }} {{ op }} {{ num2 }} = {{ randomAns }}</div>
             <div class="btns">
                <div ref="corr" class="correct"><img 
                   :style="{pointerEvents: disablechoice() }" 
