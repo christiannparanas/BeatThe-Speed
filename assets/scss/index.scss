@@ -229,11 +229,11 @@ body {
             outline: 0;
          }
 
-         .correct:hover {
+         .correct:focus {
             border: 4px solid #5CBC7D;
          }
 
-         .wrong:hover {
+         .wrong:focus {
             border: 4px solid #C84855;
          }
       }

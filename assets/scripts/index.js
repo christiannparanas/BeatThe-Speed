@@ -26,12 +26,13 @@ new Vue({
       num2: 0,
       points: 0,
       rightAns: 0,
-      randomAns: 0
+      randomAns: 0,
+      btnDisabled: "all"
    },
    watch: {
       timerCount: function() {
          if(this.timerCount === 0) {
-            this.nextProb()
+            this.gameover()
          }
       }
    },
@@ -87,6 +88,7 @@ new Vue({
       },
       // start
       start: function() {
+         this.btnDisabled = "all"
          this.pre = false
          this.home = false
          this.gamestart = true  
@@ -123,7 +125,12 @@ new Vue({
          }
       },
       gameover: function() {
+         this.btnDisabled = "none"
+         this.timerCount = 5
          this.overModal = true
+      },
+      disablechoice: function() {
+         return this.btnDisabled;
       },
       navi: function(num) {
          if(num === 1) {
@@ -132,6 +139,7 @@ new Vue({
             this.start()
          }else if(num === 2) {
             this.home = true
+            this.points = 0
             this.overModal = false
             this.gamestart = false
          }
